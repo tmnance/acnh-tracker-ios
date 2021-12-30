@@ -83,15 +83,6 @@ struct ArtCell: View {
                     .foregroundColor(art.isDonated ? .green : .gray)
             )
     }
-    
-    private func unobtainItem(obtainedItem: ObtainedItem) {
-        viewContext.delete(obtainedItem)
-        do {
-            try viewContext.save()
-        } catch {
-            print("Error saving context, \(error)")
-        }
-    }
 }
 
 struct ArtCell_Previews: PreviewProvider {

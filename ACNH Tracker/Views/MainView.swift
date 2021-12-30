@@ -14,6 +14,11 @@ struct MainView: View {
 //                .tabItem {
 //                    Label("Content", systemImage: "list.dash")
 //                }
+            
+            BugList()
+                .tabItem {
+                    Label("Bug", systemImage: "ladybug")
+                }
 
             ArtList()
                 .tabItem {

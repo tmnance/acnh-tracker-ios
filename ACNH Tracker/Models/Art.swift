@@ -54,7 +54,7 @@ struct Art: Identifiable {
         let obtainedItemsDict = loadObtainedItems().reduce(into: [String: ObtainedItem]()) {
             $0[$1.name] = $1
         }
-        
+
         return (self.getRawArtData() ?? []).map { (artRaw) in
             Art(
                 imageName: artRaw.imageName,
