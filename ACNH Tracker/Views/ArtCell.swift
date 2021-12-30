@@ -10,7 +10,6 @@ import SwiftUI
 struct ArtCell: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    private let imageWidth = 130.0
     private let minHeight = 160.0
 
     @State var art: Art

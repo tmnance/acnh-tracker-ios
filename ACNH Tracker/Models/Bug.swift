@@ -26,8 +26,8 @@ struct Bug: Identifiable {
     let name: String
     let price: Int
     let location: String
-    let time: [Int]
-    let monthsNorthern: [Int]
+    let time: Set<Int>
+    let monthsNorthern: Set<Int>
     var isObtained: Bool = false
     var isDonated: Bool = false
     private var obtainedItem: ObtainedItem? = nil
@@ -45,8 +45,8 @@ struct Bug: Identifiable {
                 name: bugRaw.name,
                 price: bugRaw.price,
                 location: bugRaw.location,
-                time: bugRaw.time,
-                monthsNorthern: bugRaw.monthsNorthern,
+                time: Set(bugRaw.time),
+                monthsNorthern: Set(bugRaw.monthsNorthern),
                 isObtained: obtainedItemsDict[bugRaw.name] != nil,
                 isDonated: obtainedItemsDict[bugRaw.name] != nil,
                 obtainedItem: obtainedItemsDict[bugRaw.name]

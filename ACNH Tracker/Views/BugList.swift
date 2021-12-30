@@ -22,7 +22,6 @@ struct BugList: View {
                 LazyVGrid(columns: layout, spacing: 5) {
                     ForEach(Bug.getAll()) { bug in
                         BugCell(bug: bug) {
-                            print("onTap")
                             selectedBug = bug
                         }
                     }

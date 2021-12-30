@@ -10,7 +10,6 @@ import SwiftUI
 struct BugCell: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    private let imageWidth = 130.0
     private let minHeight = 160.0
 
     @State var bug: Bug
@@ -36,10 +35,26 @@ struct BugCell: View {
     var body: some View {
         VStack {
             Text("**\(bug.name.capitalized)**")
-                .font(.system(size: 16))
+                .font(.system(size: 14))
                 .frame(maxWidth: .infinity)
                 .padding(5)
                 .background(self.getBgColor(bug))
+
+//            HStack(spacing: 1) {
+//                ForEach((0...11), id: \.self) {
+//                    Rectangle()
+//                        .fill($0 % 2 == 0 ? .gray : .green)
+//                        .frame(height: 20)
+//                }
+//            }
+            HStack(spacing: 6) {
+                Text("🗓")
+                    .font(.system(size: 14))
+                MonthAvailability(monthsAvailable: bug.monthsNorthern)
+//                    .padding(.horizontal, 1)
+//                    .padding(.leading, 30)
+            }
+            .padding(.horizontal, 6)
 
             Spacer()
                 .frame(maxWidth: .infinity)
@@ -48,7 +63,6 @@ struct BugCell: View {
                 HStack {
                     Text("🎒")
                         .font(.system(size: 24))
-//                        .foregroundColor(self.getBgColor2(bug))
                         .frame(minWidth: 0)
                     Toggle("", isOn: $bug.isObtained)
                         .labelsHidden()
@@ -68,12 +82,11 @@ struct BugCell: View {
                 .padding(5)
                 .background(self.getBgColor(bug))
                 .cornerRadius(10)
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(maxWidth: .infinity, alignment: .leading)
 
                 HStack {
                     Text("🦉")
                         .font(.system(size: 24))
-//                        .foregroundColor(self.getBgColor2(bug))
                         .frame(minWidth: 0)
                     Toggle("", isOn: $bug.isDonated)
                         .labelsHidden()

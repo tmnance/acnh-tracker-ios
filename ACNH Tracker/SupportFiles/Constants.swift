@@ -8,6 +8,7 @@
 import UIKit
 
 public struct Constants {
+    static let monthFirstLetters = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"]
 //    struct Colors {
 //        static let clear = UIColor.clear
 //        static let label = UIColor(named: "label")!
