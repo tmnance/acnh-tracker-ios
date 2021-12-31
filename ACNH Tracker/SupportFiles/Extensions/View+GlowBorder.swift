@@ -1,5 +1,5 @@
 //
-//  GlowBorder.swift
+//  View+GlowBorder.swift
 //  ACNH Tracker
 //
 //  Created by Tim Nance on 12/30/21.

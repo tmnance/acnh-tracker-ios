@@ -12,7 +12,7 @@ private struct BugRaw: Decodable {
     let name: String
     let price: Int
     let location: String
-    let time: [Int]
+    let hours: [Int]
     let monthsNorthern: [Int]
 }
 
@@ -26,7 +26,7 @@ struct Bug: Identifiable {
     let name: String
     let price: Int
     let location: String
-    let time: Set<Int>
+    let hours: Set<Int>
     let monthsNorthern: Set<Int>
     var isObtained: Bool = false
     var isDonated: Bool = false
@@ -45,7 +45,7 @@ struct Bug: Identifiable {
                 name: bugRaw.name,
                 price: bugRaw.price,
                 location: bugRaw.location,
-                time: Set(bugRaw.time),
+                hours: Set(bugRaw.hours),
                 monthsNorthern: Set(bugRaw.monthsNorthern),
                 isObtained: obtainedItemsDict[bugRaw.name] != nil,
                 isDonated: obtainedItemsDict[bugRaw.name] != nil,
@@ -151,7 +151,7 @@ extension Bug {
         name: "agrias butterfly",
         price: 3000,
         location: "flying",
-        time: [8, 9, 10, 11, 12, 13, 14, 15, 16],
+        hours: [8, 9, 10, 11, 12, 13, 14, 15, 16],
         monthsNorthern: [3, 4, 5, 6, 7, 8]
     )
 }

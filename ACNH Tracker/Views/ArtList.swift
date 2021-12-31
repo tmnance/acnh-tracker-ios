@@ -9,20 +9,26 @@ import SwiftUI
 
 struct ArtList: View {
     private let cellHeight = 130.0
+    private let allArtItems = Art.getAll()
     @State private var selectedArt: Art? = nil
-//    @State private var searchText = ""
+    @State private var searchText = ""
 
     let layout = [
         GridItem(.adaptive(minimum: 130)),
     ]
 
+    func getFilteredArtItems() -> [Art] {
+        !searchText.isEmpty ?
+            allArtItems.filter { $0.shortName.containsWord(startingWith: searchText.lowercased()) } :
+            allArtItems
+    }
+
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: layout, spacing: 5) {
-                    ForEach(Art.getAll()) { art in
+                    ForEach(getFilteredArtItems()) { art in
                         ArtCell(art: art) {
-                            print("onTap")
                             selectedArt = art
                         }
                     }
@@ -35,16 +41,20 @@ struct ArtList: View {
             }
             .navigationTitle("Art")
             .navigationBarTitleDisplayMode(.inline)
-//            .searchable(text: $searchText)
+            .searchable(text: $searchText)//, placement: .navigationBarDrawer(displayMode: .always))
+//            .onChange(of: searchText) { searchText in
+//                if !searchText.isEmpty {
+//                    artItems = Art.getAll().filter {
+//                        $0.shortName.starts(with: searchText.lowercased())
+//                    }
+//                } else {
+//                    artItems = Art.getAll()
+//                }
+//            }
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarTrailing) {
 //                    EditButton()
 //                }
-////                ToolbarItem {
-////                    Button(action: addItem) {
-////                        Label("Add Item", systemImage: "plus")
-////                    }
-////                }
 //            }
         }
         .navigationViewStyle(StackNavigationViewStyle())

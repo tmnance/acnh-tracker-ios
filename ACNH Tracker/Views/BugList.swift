@@ -9,18 +9,25 @@ import SwiftUI
 
 struct BugList: View {
     private let cellHeight = 130.0
+    private let allBugItems = Bug.getAll()
     @State private var selectedBug: Bug? = nil
-//    @State private var searchText = ""
+    @State private var searchText = ""
 
     let layout = [
         GridItem(.adaptive(minimum: 130)),
     ]
+    
+    func getFilteredBugItems() -> [Bug] {
+        !searchText.isEmpty ?
+            allBugItems.filter { $0.name.containsWord(startingWith: searchText.lowercased()) } :
+            allBugItems
+    }
 
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: layout, spacing: 5) {
-                    ForEach(Bug.getAll()) { bug in
+                    ForEach(getFilteredBugItems()) { bug in
                         BugCell(bug: bug) {
                             selectedBug = bug
                         }
@@ -29,22 +36,10 @@ struct BugList: View {
             }
             .sheet(item: $selectedBug) { item in
                 BugDetail(bug: item)
-//                    .background(BackgroundClearView())
-//                    .background(Color.white.opacity(0.95))
             }
             .navigationTitle("Bug")
             .navigationBarTitleDisplayMode(.inline)
-//            .searchable(text: $searchText)
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBBugrailing) {
-//                    EditButton()
-//                }
-////                ToolbarItem {
-////                    Button(action: addItem) {
-////                        Label("Add Item", systemImage: "plus")
-////                    }
-////                }
-//            }
+            .searchable(text: $searchText)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -55,15 +50,3 @@ struct BugList_Previews: PreviewProvider {
         BugList()
     }
 }
-
-//struct BackgroundClearView: UIViewRepresentable {
-//    func makeUIView(context: Context) -> UIView {
-//        let view = UIView()
-//        DispatchQueue.main.async {
-//            view.superview?.superview?.backgroundColor = .clear
-//        }
-//        return view
-//    }
-//
-//    func updateUIView(_ uiView: UIView, context: Context) {}
-//}
