@@ -34,6 +34,10 @@ struct InsectList: View {
                     }
                 }
                 .padding(.horizontal, 5)
+//                .background(
+//                    Image(uiImage: UIImage(named: "background") ?? UIImage())
+//                        .resizable(resizingMode: .tile)
+//                )
             }
             .sheet(item: $selectedInsect) { item in
                 InsectDetail(insect: item)
@@ -41,6 +45,8 @@ struct InsectList: View {
             .navigationTitle("Insects")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText)
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

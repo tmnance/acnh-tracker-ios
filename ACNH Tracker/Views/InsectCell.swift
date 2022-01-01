@@ -40,35 +40,28 @@ struct InsectCell: View {
                 .padding(5)
                 .background(self.getBgColor(insect))
 
-//            HStack(spacing: 1) {
-//                ForEach((0...11), id: \.self) {
-//                    Rectangle()
-//                        .fill($0 % 2 == 0 ? .gray : .green)
-//                        .frame(height: 20)
-//                }
+//            HStack(spacing: 6) {
+//                Text("🗓")
+//                    .font(.system(size: 14))
+//                MonthAvailability(monthsAvailable: insect.monthsNorthern)
+////                    .padding(.horizontal, 1)
+////                    .padding(.leading, 30)
 //            }
-            HStack(spacing: 6) {
-                Text("🗓")
-                    .font(.system(size: 14))
-                MonthAvailability(monthsAvailable: insect.monthsNorthern)
-//                    .padding(.horizontal, 1)
-//                    .padding(.leading, 30)
-            }
-            .padding(.horizontal, 6)
+//            .padding(.horizontal, 6)
 
             Spacer()
                 .frame(maxWidth: .infinity)
 
             HStack {
-                HStack {
-                    Text("🎒")
-                        .font(.system(size: 24))
-                        .frame(minWidth: 0)
+                HStack(spacing: 0) {
+                    Image(uiImage: UIImage(named: "catch") ?? UIImage())
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 26)
                     Toggle("", isOn: $insect.isObtained)
                         .labelsHidden()
                         .frame(minWidth: 0)
                         .onChange(of: insect.isObtained) { value in
-                            // action...
                             print("toggle clicked! \(value)")
                             if value {
                                 print("toggle -> obtainItem()");
@@ -82,17 +75,20 @@ struct InsectCell: View {
                 .padding(5)
                 .background(self.getBgColor(insect))
                 .cornerRadius(10)
-                .frame(maxWidth: .infinity, alignment: .leading)
+
+                Spacer()
 
                 HStack {
-                    Text("🦉")
-                        .font(.system(size: 24))
-                        .frame(minWidth: 0)
+                    Image(uiImage: UIImage(named: "donate") ?? UIImage())
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(Color(red: 102/255, green: 102/255,blue: 102/255))
+                        .frame(height: 26)
+                        .padding(.trailing, 5)
                     Toggle("", isOn: $insect.isDonated)
                         .labelsHidden()
                         .frame(minWidth: 0)
                         .onChange(of: insect.isDonated) { value in
-                            // action...
                             print("toggle clicked! \(value)")
                             if value {
                                 print("toggle -> donateItem()");
@@ -104,39 +100,39 @@ struct InsectCell: View {
                         }
                 }
                 .padding(5)
+                .padding(.trailing, 10)
                 .background(self.getBgColor(insect))
                 .cornerRadius(10)
-                .frame(maxWidth: .infinity, alignment: .trailing)
             }
+            .onTapGesture {
+                // do nothing
+                print("nothing")
+            }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            onTap()
         }
         .frame(height: minHeight)
         .background(
-            GeometryReader { geo in
-                Image(uiImage: UIImage(named: "Insect/\(insect.imageName)") ?? UIImage())
-                    .resizable()
-                    .frame(width: geo.size.width, height: geo.size.width, alignment: .center)
-                    .scaledToFill()
-                    .clipped()
-                    .scaleEffect(0.5)
-//                AsyncImage(url: URL(string: insect.image)) { image in
-//                    image.resizable()
-//                } placeholder: {
-//                    ProgressView()
-//                }
-//                .frame(width: geo.size.width, height: geo.size.width, alignment: .center)
-//                .scaledToFill()
-//                .clipped()
-            }
-            .onTapGesture {
-                onTap()
-            }
+            Image(uiImage: UIImage(named: "Insect/\(insect.imageName)") ?? UIImage())
+                .resizable()
+                .scaledToFit()
+                .brightness(insect.isObtained ? 0 : -1)
+                .opacity(insect.isObtained ? 1 : 0.7)
+                .scaleEffect(0.5)
+        )
+        .background(
+            Image(uiImage: UIImage(named: "background") ?? UIImage())
+                .resizable(resizingMode: .tile)
         )
         .cornerRadius(10)
         .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(self.getBgColor2(insect))
-            )
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(lineWidth: 2)
+                .foregroundColor(self.getBgColor2(insect))
+        )
     }
 }
 

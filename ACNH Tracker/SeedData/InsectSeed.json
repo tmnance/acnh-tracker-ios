@@ -2,7 +2,7 @@
   {
     "num": 10,
     "name": "agrias butterfly",
-    "imageName": "agrias-butterfly.png",
+    "imageName": "agrias-butterfly",
     "price": 3000,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -14,7 +14,7 @@
   {
     "num": 69,
     "name": "ant",
-    "imageName": "ant.png",
+    "imageName": "ant",
     "price": 80,
     "location": "on rotten turnips or candy",
     "weather": "any weather",
@@ -26,7 +26,7 @@
   {
     "num": 14,
     "name": "atlas moth",
-    "imageName": "atlas-moth.png",
+    "imageName": "atlas-moth",
     "price": 3000,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -38,7 +38,7 @@
   {
     "num": 68,
     "name": "bagworm",
-    "imageName": "bagworm.png",
+    "imageName": "bagworm",
     "price": 600,
     "location": "shaking trees (hardwood or cedar only)",
     "weather": "any weather",
@@ -50,7 +50,7 @@
   {
     "num": 34,
     "name": "banded dragonfly",
-    "imageName": "banded-dragonfly.png",
+    "imageName": "banded-dragonfly",
     "price": 4500,
     "location": "flying near water",
     "weather": "any except rain",
@@ -62,7 +62,7 @@
   {
     "num": 21,
     "name": "bell cricket",
-    "imageName": "bell-cricket.png",
+    "imageName": "bell-cricket",
     "price": 430,
     "location": "on the ground",
     "weather": "any except rain",
@@ -74,7 +74,7 @@
   {
     "num": 49,
     "name": "blue weevil beetle",
-    "imageName": "blue-weevil-beetle.png",
+    "imageName": "blue-weevil-beetle",
     "price": 800,
     "location": "on palm trees",
     "weather": "any weather",
@@ -86,7 +86,7 @@
   {
     "num": 26,
     "name": "brown cicada",
-    "imageName": "brown-cicada.png",
+    "imageName": "brown-cicada",
     "price": 250,
     "location": "on hardwood/cedar trees",
     "weather": "any weather",
@@ -98,7 +98,7 @@
   {
     "num": 77,
     "name": "centipede",
-    "imageName": "centipede.png",
+    "imageName": "centipede",
     "price": 300,
     "location": "from hitting rocks",
     "weather": "any weather",
@@ -110,7 +110,7 @@
   {
     "num": 31,
     "name": "cicada shell",
-    "imageName": "cicada-shell.png",
+    "imageName": "cicada-shell",
     "price": 10,
     "location": "on hardwood/cedar trees",
     "weather": "any weather",
@@ -122,7 +122,7 @@
   {
     "num": 47,
     "name": "citrus long-horned beetle",
-    "imageName": "citrus-long-horned-beetle.png",
+    "imageName": "citrus-long-horned-beetle",
     "price": 350,
     "location": "on tree stumps",
     "weather": "any except rain",
@@ -134,7 +134,7 @@
   {
     "num": 5,
     "name": "common bluebottle",
-    "imageName": "common-bluebottle.png",
+    "imageName": "common-bluebottle",
     "price": 300,
     "location": "flying",
     "weather": "any except rain",
@@ -146,7 +146,7 @@
   {
     "num": 1,
     "name": "common butterfly",
-    "imageName": "common-butterfly.png",
+    "imageName": "common-butterfly",
     "price": 160,
     "location": "flying",
     "weather": "any except rain",
@@ -158,7 +158,7 @@
   {
     "num": 20,
     "name": "cricket",
-    "imageName": "cricket.png",
+    "imageName": "cricket",
     "price": 130,
     "location": "on the ground",
     "weather": "any except rain",
@@ -170,7 +170,7 @@
   {
     "num": 59,
     "name": "cyclommatus stag",
-    "imageName": "cyclommatus-stag.png",
+    "imageName": "cyclommatus-stag",
     "price": 8000,
     "location": "on palm trees",
     "weather": "any weather",
@@ -182,7 +182,7 @@
   {
     "num": 35,
     "name": "damselfly",
-    "imageName": "damselfly.png",
+    "imageName": "damselfly",
     "price": 500,
     "location": "flying near water",
     "weather": "any except rain",
@@ -194,7 +194,7 @@
   {
     "num": 33,
     "name": "darner dragonfly",
-    "imageName": "darner-dragonfly.png",
+    "imageName": "darner-dragonfly",
     "price": 230,
     "location": "flying near water",
     "weather": "any except rain",
@@ -206,7 +206,7 @@
   {
     "num": 39,
     "name": "diving beetle",
-    "imageName": "diving-beetle.png",
+    "imageName": "diving-beetle",
     "price": 800,
     "location": "on rivers/ponds",
     "weather": "any weather",
@@ -218,7 +218,7 @@
   {
     "num": 53,
     "name": "drone beetle",
-    "imageName": "drone-beetle.png",
+    "imageName": "drone-beetle",
     "price": 200,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -230,7 +230,7 @@
   {
     "num": 50,
     "name": "dung beetle",
-    "imageName": "dung-beetle.png",
+    "imageName": "dung-beetle",
     "price": 3000,
     "location": "pushing snowballs",
     "weather": "any weather",
@@ -242,7 +242,7 @@
   {
     "num": 51,
     "name": "earth-boring dung beetle",
-    "imageName": "earth-boring-dung-beetle.png",
+    "imageName": "earth-boring-dung-beetle",
     "price": 300,
     "location": "on the ground",
     "weather": "any weather",
@@ -254,7 +254,7 @@
   {
     "num": 9,
     "name": "emperor butterfly",
-    "imageName": "emperor-butterfly.png",
+    "imageName": "emperor-butterfly",
     "price": 4000,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -266,7 +266,7 @@
   {
     "num": 30,
     "name": "evening cicada",
-    "imageName": "evening-cicada.png",
+    "imageName": "evening-cicada",
     "price": 550,
     "location": "on hardwood/cedar trees",
     "weather": "any weather",
@@ -278,7 +278,7 @@
   {
     "num": 36,
     "name": "firefly",
-    "imageName": "firefly.png",
+    "imageName": "firefly",
     "price": 300,
     "location": "flying near water",
     "weather": "any except rain",
@@ -290,7 +290,7 @@
   {
     "num": 74,
     "name": "flea",
-    "imageName": "flea.png",
+    "imageName": "flea",
     "price": 70,
     "location": "on villagers",
     "weather": "any weather",
@@ -302,7 +302,7 @@
   {
     "num": 72,
     "name": "fly",
-    "imageName": "fly.png",
+    "imageName": "fly",
     "price": 60,
     "location": "flying near trash (boots, tires, cans, used fountain fireworks) or rotten turnips",
     "weather": "any weather",
@@ -314,7 +314,7 @@
   {
     "num": 28,
     "name": "giant cicada",
-    "imageName": "giant-cicada.png",
+    "imageName": "giant-cicada",
     "price": 500,
     "location": "on hardwood/cedar trees",
     "weather": "any weather",
@@ -326,7 +326,7 @@
   {
     "num": 57,
     "name": "giant stag",
-    "imageName": "giant-stag.png",
+    "imageName": "giant-stag",
     "price": 10000,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -338,7 +338,7 @@
   {
     "num": 40,
     "name": "giant water bug",
-    "imageName": "giant-water-bug.png",
+    "imageName": "giant-water-bug",
     "price": 2000,
     "location": "on rivers/ponds",
     "weather": "any weather",
@@ -350,7 +350,7 @@
   {
     "num": 61,
     "name": "giraffe stag",
-    "imageName": "giraffe-stag.png",
+    "imageName": "giraffe-stag",
     "price": 12000,
     "location": "on palm trees",
     "weather": "any weather",
@@ -362,7 +362,7 @@
   {
     "num": 60,
     "name": "golden stag",
-    "imageName": "golden-stag.png",
+    "imageName": "golden-stag",
     "price": 12000,
     "location": "on palm trees",
     "weather": "any weather",
@@ -374,7 +374,7 @@
   {
     "num": 54,
     "name": "goliath beetle",
-    "imageName": "goliath-beetle.png",
+    "imageName": "goliath-beetle",
     "price": 8000,
     "location": "on palm trees",
     "weather": "any weather",
@@ -386,7 +386,7 @@
   {
     "num": 19,
     "name": "grasshopper",
-    "imageName": "grasshopper.png",
+    "imageName": "grasshopper",
     "price": 160,
     "location": "on the ground",
     "weather": "any except rain",
@@ -398,7 +398,7 @@
   {
     "num": 7,
     "name": "great purple emperor",
-    "imageName": "great-purple-emperor.png",
+    "imageName": "great-purple-emperor",
     "price": 3000,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -410,7 +410,7 @@
   {
     "num": 70,
     "name": "hermit crab",
-    "imageName": "hermit-crab.png",
+    "imageName": "hermit-crab",
     "price": 1000,
     "location": "disguised on shoreline",
     "weather": "any weather",
@@ -422,7 +422,7 @@
   {
     "num": 24,
     "name": "honeybee",
-    "imageName": "honeybee.png",
+    "imageName": "honeybee",
     "price": 200,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -434,7 +434,7 @@
   {
     "num": 63,
     "name": "horned atlas",
-    "imageName": "horned-atlas.png",
+    "imageName": "horned-atlas",
     "price": 8000,
     "location": "on palm trees",
     "weather": "any weather",
@@ -446,7 +446,7 @@
   {
     "num": 62,
     "name": "horned dynastid",
-    "imageName": "horned-dynastid.png",
+    "imageName": "horned-dynastid",
     "price": 1350,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -458,7 +458,7 @@
   {
     "num": 64,
     "name": "horned elephant",
-    "imageName": "horned-elephant.png",
+    "imageName": "horned-elephant",
     "price": 8000,
     "location": "on palm trees",
     "weather": "any weather",
@@ -470,7 +470,7 @@
   {
     "num": 65,
     "name": "horned hercules",
-    "imageName": "horned-hercules.png",
+    "imageName": "horned-hercules",
     "price": 12000,
     "location": "on palm trees",
     "weather": "any weather",
@@ -482,7 +482,7 @@
   {
     "num": 45,
     "name": "jewel beetle",
-    "imageName": "jewel-beetle.png",
+    "imageName": "jewel-beetle",
     "price": 2400,
     "location": "on tree stumps",
     "weather": "any except rain",
@@ -494,7 +494,7 @@
   {
     "num": 43,
     "name": "ladybug",
-    "imageName": "ladybug.png",
+    "imageName": "ladybug",
     "price": 200,
     "location": "on flowers",
     "weather": "any except rain",
@@ -506,7 +506,7 @@
   {
     "num": 16,
     "name": "long locust",
-    "imageName": "long-locust.png",
+    "imageName": "long-locust",
     "price": 200,
     "location": "on the ground",
     "weather": "any weather",
@@ -518,7 +518,7 @@
   {
     "num": 15,
     "name": "madagascan sunset moth",
-    "imageName": "madagascan-sunset-moth.png",
+    "imageName": "madagascan-sunset-moth",
     "price": 2500,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -530,7 +530,7 @@
   {
     "num": 42,
     "name": "man-faced stink bug",
-    "imageName": "man-faced-stink-bug.png",
+    "imageName": "man-faced-stink-bug",
     "price": 1000,
     "location": "on flowers",
     "weather": "any except rain",
@@ -542,7 +542,7 @@
   {
     "num": 22,
     "name": "mantis",
-    "imageName": "mantis.png",
+    "imageName": "mantis",
     "price": 430,
     "location": "on flowers",
     "weather": "any except rain",
@@ -554,7 +554,7 @@
   {
     "num": 17,
     "name": "migratory locust",
-    "imageName": "migratory-locust.png",
+    "imageName": "migratory-locust",
     "price": 600,
     "location": "on the ground",
     "weather": "any weather",
@@ -566,7 +566,7 @@
   {
     "num": 56,
     "name": "miyama stag",
-    "imageName": "miyama-stag.png",
+    "imageName": "miyama-stag",
     "price": 1000,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -578,7 +578,7 @@
   {
     "num": 37,
     "name": "mole cricket",
-    "imageName": "mole-cricket.png",
+    "imageName": "mole-cricket",
     "price": 500,
     "location": "underground (dig where noise is loudest)",
     "weather": "any weather",
@@ -590,7 +590,7 @@
   {
     "num": 8,
     "name": "monarch butterfly",
-    "imageName": "monarch-butterfly.png",
+    "imageName": "monarch-butterfly",
     "price": 140,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -602,7 +602,7 @@
   {
     "num": 73,
     "name": "mosquito",
-    "imageName": "mosquito.png",
+    "imageName": "mosquito",
     "price": 130,
     "location": "flying",
     "weather": "any except rain",
@@ -614,7 +614,7 @@
   {
     "num": 13,
     "name": "moth",
-    "imageName": "moth.png",
+    "imageName": "moth",
     "price": 130,
     "location": "flying near light sources",
     "weather": "any except rain",
@@ -626,7 +626,7 @@
   {
     "num": 23,
     "name": "orchid mantis",
-    "imageName": "orchid-mantis.png",
+    "imageName": "orchid-mantis",
     "price": 2400,
     "location": "on white flowers",
     "weather": "any except rain",
@@ -638,7 +638,7 @@
   {
     "num": 6,
     "name": "paper kite butterfly",
-    "imageName": "paper-kite-butterfly.png",
+    "imageName": "paper-kite-butterfly",
     "price": 1000,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -650,7 +650,7 @@
   {
     "num": 4,
     "name": "peacock butterfly",
-    "imageName": "peacock-butterfly.png",
+    "imageName": "peacock-butterfly",
     "price": 2500,
     "location": "flying near blue/purple/black flowers",
     "weather": "any except rain",
@@ -662,7 +662,7 @@
   {
     "num": 76,
     "name": "pill bug",
-    "imageName": "pill-bug.png",
+    "imageName": "pill-bug",
     "price": 250,
     "location": "from hitting rocks",
     "weather": "any weather",
@@ -674,7 +674,7 @@
   {
     "num": 38,
     "name": "pondskater",
-    "imageName": "pondskater.png",
+    "imageName": "pondskater",
     "price": 130,
     "location": "on rivers/ponds",
     "weather": "any weather",
@@ -686,7 +686,7 @@
   {
     "num": 12,
     "name": "queen alexandra's birdwing",
-    "imageName": "queen-alexandras-birdwing.png",
+    "imageName": "queen-alexandras-birdwing",
     "price": 4000,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -698,7 +698,7 @@
   {
     "num": 58,
     "name": "rainbow stag",
-    "imageName": "rainbow-stag.png",
+    "imageName": "rainbow-stag",
     "price": 6000,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -710,7 +710,7 @@
   {
     "num": 11,
     "name": "rajah brooke's birdwing",
-    "imageName": "rajah-brookes-birdwing.png",
+    "imageName": "rajah-brookes-birdwing",
     "price": 2500,
     "location": "flying near flowers",
     "weather": "any except rain",
@@ -722,7 +722,7 @@
   {
     "num": 32,
     "name": "red dragonfly",
-    "imageName": "red-dragonfly.png",
+    "imageName": "red-dragonfly",
     "price": 180,
     "location": "flying near water",
     "weather": "any except rain",
@@ -734,7 +734,7 @@
   {
     "num": 18,
     "name": "rice grasshopper",
-    "imageName": "rice-grasshopper.png",
+    "imageName": "rice-grasshopper",
     "price": 400,
     "location": "on the ground",
     "weather": "any weather",
@@ -746,7 +746,7 @@
   {
     "num": 27,
     "name": "robust cicada",
-    "imageName": "robust-cicada.png",
+    "imageName": "robust-cicada",
     "price": 300,
     "location": "on hardwood/cedar trees",
     "weather": "any weather",
@@ -758,7 +758,7 @@
   {
     "num": 48,
     "name": "rosalia batesi beetle",
-    "imageName": "rosalia-batesi-beetle.png",
+    "imageName": "rosalia-batesi-beetle",
     "price": 3000,
     "location": "on tree stumps",
     "weather": "any except rain",
@@ -770,7 +770,7 @@
   {
     "num": 55,
     "name": "saw stag",
-    "imageName": "saw-stag.png",
+    "imageName": "saw-stag",
     "price": 2000,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -782,7 +782,7 @@
   {
     "num": 52,
     "name": "scarab beetle",
-    "imageName": "scarab-beetle.png",
+    "imageName": "scarab-beetle",
     "price": 10000,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -794,7 +794,7 @@
   {
     "num": 80,
     "name": "scorpion",
-    "imageName": "scorpion.png",
+    "imageName": "scorpion",
     "price": 8000,
     "location": "on the ground",
     "weather": "any weather",
@@ -806,7 +806,7 @@
   {
     "num": 75,
     "name": "snail",
-    "imageName": "snail.png",
+    "imageName": "snail",
     "price": 250,
     "location": "on rocks/bushes",
     "weather": "rain only",
@@ -818,7 +818,7 @@
   {
     "num": 78,
     "name": "spider",
-    "imageName": "spider.png",
+    "imageName": "spider",
     "price": 600,
     "location": "shaking trees (hardwood or cedar only)",
     "weather": "any weather",
@@ -830,7 +830,7 @@
   {
     "num": 41,
     "name": "stinkbug",
-    "imageName": "stinkbug.png",
+    "imageName": "stinkbug",
     "price": 120,
     "location": "on flowers",
     "weather": "any except rain",
@@ -842,7 +842,7 @@
   {
     "num": 79,
     "name": "tarantula",
-    "imageName": "tarantula.png",
+    "imageName": "tarantula",
     "price": 8000,
     "location": "on the ground",
     "weather": "any weather",
@@ -854,7 +854,7 @@
   {
     "num": 44,
     "name": "tiger beetle",
-    "imageName": "tiger-beetle.png",
+    "imageName": "tiger-beetle",
     "price": 1500,
     "location": "on the ground",
     "weather": "any except rain",
@@ -866,7 +866,7 @@
   {
     "num": 3,
     "name": "tiger butterfly",
-    "imageName": "tiger-butterfly.png",
+    "imageName": "tiger-butterfly",
     "price": 240,
     "location": "flying",
     "weather": "any except rain",
@@ -878,7 +878,7 @@
   {
     "num": 46,
     "name": "violin beetle",
-    "imageName": "violin-beetle.png",
+    "imageName": "violin-beetle",
     "price": 450,
     "location": "on tree stumps",
     "weather": "any except rain",
@@ -890,7 +890,7 @@
   {
     "num": 29,
     "name": "walker cicada",
-    "imageName": "walker-cicada.png",
+    "imageName": "walker-cicada",
     "price": 400,
     "location": "on hardwood/cedar trees",
     "weather": "any weather",
@@ -902,7 +902,7 @@
   {
     "num": 67,
     "name": "walking leaf",
-    "imageName": "walking-leaf.png",
+    "imageName": "walking-leaf",
     "price": 600,
     "location": "disguised under trees",
     "weather": "any weather",
@@ -914,7 +914,7 @@
   {
     "num": 66,
     "name": "walking stick",
-    "imageName": "walking-stick.png",
+    "imageName": "walking-stick",
     "price": 600,
     "location": "on trees (any kind)",
     "weather": "any weather",
@@ -926,7 +926,7 @@
   {
     "num": 25,
     "name": "wasp",
-    "imageName": "wasp.png",
+    "imageName": "wasp",
     "price": 2500,
     "location": "shaking trees",
     "weather": "any weather",
@@ -938,7 +938,7 @@
   {
     "num": 71,
     "name": "wharf roach",
-    "imageName": "wharf-roach.png",
+    "imageName": "wharf-roach",
     "price": 200,
     "location": "on beach rocks",
     "weather": "any weather",
@@ -950,7 +950,7 @@
   {
     "num": 2,
     "name": "yellow butterfly",
-    "imageName": "yellow-butterfly.png",
+    "imageName": "yellow-butterfly",
     "price": 160,
     "location": "flying",
     "weather": "any except rain",

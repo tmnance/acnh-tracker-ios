@@ -25,6 +25,7 @@ struct MainView: View {
                     Label("Art", systemImage: "person.crop.artframe")
                 }
         }
+        .preferredColorScheme(.light)
     }
 }
 
