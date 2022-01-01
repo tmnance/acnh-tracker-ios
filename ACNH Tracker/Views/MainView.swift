@@ -15,9 +15,9 @@ struct MainView: View {
 //                    Label("Content", systemImage: "list.dash")
 //                }
             
-            BugList()
+            InsectList()
                 .tabItem {
-                    Label("Bug", systemImage: "ladybug")
+                    Label("Insects", systemImage: "ladybug")
                 }
 
             ArtList()
