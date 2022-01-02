@@ -20,11 +20,11 @@ private struct InsectRaw: Decodable {
     let monthsNorthern: [Int]
 }
 
-struct Insect: Identifiable {
-    typealias ID = String
+public class Insect: Identifiable, ObservableObject {
+    public typealias ID = String
     private static let typeName = "Insect"
 
-    var id: ID { name }
+    public var id: ID { name }
 
     let num: Int
     let name: String
@@ -36,9 +36,39 @@ struct Insect: Identifiable {
     let rarity: String
     let hours: Set<Int>
     let monthsNorthern: Set<Int>
-    var isObtained: Bool = false
-    var isDonated: Bool = false
+    @Published var isObtained: Bool = false
+    @Published var isDonated: Bool = false
     private var obtainedItem: ObtainedItem? = nil
+    
+    init(
+        num: Int,
+        name: String,
+        imageName: String,
+        price: Int,
+        location: String,
+        weather: String,
+        totalCatchesToUnlock: Int,
+        rarity: String,
+        hours: Set<Int>,
+        monthsNorthern: Set<Int>,
+        isObtained: Bool = false,
+        isDonated: Bool = false,
+        obtainedItem: ObtainedItem? = nil
+    ) {
+        self.num = num
+        self.name = name
+        self.imageName = imageName
+        self.price = price
+        self.location = location
+        self.weather = weather
+        self.totalCatchesToUnlock = totalCatchesToUnlock
+        self.rarity = rarity
+        self.hours = hours
+        self.monthsNorthern = monthsNorthern
+        self.isObtained = isObtained
+        self.isDonated = isDonated
+        self.obtainedItem = obtainedItem
+    }
 
     public static func getAll(
 //        sortedBy sortKeys: [(String, Constants.SortDir)] = [("name", .asc)]
@@ -48,7 +78,7 @@ struct Insect: Identifiable {
         }
 
         return (self.getRawInsectData() ?? []).map { (insectRaw) in
-            Insect(
+            Insect.init(
                 num: insectRaw.num,
                 name: insectRaw.name,
                 imageName: insectRaw.imageName,
@@ -82,7 +112,7 @@ struct Insect: Identifiable {
         return insectRawList
     }
     
-    mutating func obtainItem() {
+    func obtainItem() {
         if obtainedItem != nil { // already exists
             return
         }
@@ -105,7 +135,7 @@ struct Insect: Identifiable {
         }
     }
 
-    mutating func unobtainItem() {
+    func unobtainItem() {
         guard let obtainedItemToDelete = obtainedItem else {
             return
         }
@@ -123,7 +153,7 @@ struct Insect: Identifiable {
         }
     }
 
-    mutating func donateItem() {
+    func donateItem() {
         if obtainedItem == nil { // not yet marked as obtained
             obtainItem()
         }
@@ -140,7 +170,7 @@ struct Insect: Identifiable {
         }
     }
 
-    mutating func undonateItem() {
+    func undonateItem() {
         guard let obtainedItemToUndonate = obtainedItem else {
             return
         }
@@ -158,7 +188,7 @@ struct Insect: Identifiable {
 }
 
 extension Insect {
-    static let sample = Self.init(
+    static let sample = Insect.init(
         num: 10,
         name: "agrias butterfly",
         imageName: "agrias-butterfly.png",

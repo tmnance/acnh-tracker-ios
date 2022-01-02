@@ -29,6 +29,7 @@ struct InsectList: View {
                 LazyVGrid(columns: layout, spacing: 5) {
                     ForEach(getFilteredInsectItems()) { insect in
                         InsectCell(insect: insect) {
+                            print("InsectCell->insect.isDonated = \(insect.isDonated)")
                             selectedInsect = insect
                         }
                     }
@@ -40,6 +41,7 @@ struct InsectList: View {
 //                )
             }
             .sheet(item: $selectedInsect) { item in
+//                print("sheet->item.isDonated = \(item.isDonated)")
                 InsectDetail(insect: item)
             }
             .navigationTitle("Insects")

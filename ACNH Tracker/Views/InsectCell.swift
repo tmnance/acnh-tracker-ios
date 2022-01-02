@@ -12,7 +12,7 @@ struct InsectCell: View {
 
     private let minHeight = 160.0
 
-    @State var insect: Insect
+    @ObservedObject var insect: Insect
     let onTap: () -> Void
 
     private func getBgColor(_ insect: Insect) -> Color {
