@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InsectList: View {
+    public static let scrollTopId = UUID()
     private let cellHeight = 130.0
     private let allInsectItems = Insect.getAll()
     @State private var selectedInsect: Insect? = nil
@@ -26,6 +27,9 @@ struct InsectList: View {
     var body: some View {
         NavigationView {
             ScrollView {
+                EmptyView()
+                    .id(InsectList.scrollTopId)
+
                 LazyVGrid(columns: layout, spacing: 5) {
                     ForEach(getFilteredInsectItems()) { insect in
                         InsectCell(insect: insect) {

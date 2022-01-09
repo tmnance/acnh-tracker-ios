@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ArtList: View {
+    public static let scrollTopId = UUID()
     private let cellHeight = 130.0
     private let allArtItems = Art.getAll()
     @State private var selectedArt: Art? = nil
@@ -26,6 +27,9 @@ struct ArtList: View {
     var body: some View {
         NavigationView {
             ScrollView {
+                EmptyView()
+                    .id(ArtList.scrollTopId)
+
                 LazyVGrid(columns: layout, spacing: 5) {
                     ForEach(getFilteredArtItems()) { art in
                         ArtCell(art: art) {

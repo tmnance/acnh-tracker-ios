@@ -120,7 +120,7 @@ struct InsectCell: View {
                 .resizable()
                 .scaledToFit()
                 .brightness(insect.isObtained ? 0 : -1)
-                .opacity(insect.isObtained ? 1 : 0.7)
+//                .opacity(insect.isObtained ? 1 : 0.7)
                 .scaleEffect(0.5)
         )
         .background(
