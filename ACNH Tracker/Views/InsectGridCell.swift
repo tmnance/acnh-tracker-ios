@@ -1,5 +1,5 @@
 //
-//  InsectCell.swift
+//  InsectGridCell.swift
 //  ACNH Tracker
 //
 //  Created by Tim Nance on 12/30/21.
@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct InsectCell: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
+struct InsectGridCell: View {
     private let minHeight = 160.0
 
     @ObservedObject var insect: Insect
     let onTap: () -> Void
 
+    // TODO: refactor to shared fn
     private func getBgColor(_ insect: Insect) -> Color {
         return (insect.isDonated ?
             Color(red: 0.8, green: 1, blue: 0.8) :
@@ -24,6 +23,7 @@ struct InsectCell: View {
         ).opacity(0.7)
     }
 
+    // TODO: refactor to shared fn
     private func getBgColor2(_ insect: Insect) -> Color {
         return insect.isDonated ?
             .green :
@@ -40,15 +40,6 @@ struct InsectCell: View {
                 .padding(5)
                 .background(self.getBgColor(insect))
 
-//            HStack(spacing: 6) {
-//                Text("🗓")
-//                    .font(.system(size: 14))
-//                MonthAvailability(monthsAvailable: insect.monthsNorthern)
-////                    .padding(.horizontal, 1)
-////                    .padding(.leading, 30)
-//            }
-//            .padding(.horizontal, 6)
-
             Spacer()
                 .frame(maxWidth: .infinity)
 
@@ -62,12 +53,9 @@ struct InsectCell: View {
                         .labelsHidden()
                         .frame(minWidth: 0)
                         .onChange(of: insect.isObtained) { value in
-                            print("toggle clicked! \(value)")
                             if value {
-                                print("toggle -> obtainItem()");
                                 insect.obtainItem()
                             } else {
-                                print("toggle -> unobtainItem()");
                                 insect.unobtainItem()
                             }
                         }
@@ -89,12 +77,9 @@ struct InsectCell: View {
                         .labelsHidden()
                         .frame(minWidth: 0)
                         .onChange(of: insect.isDonated) { value in
-                            print("toggle clicked! \(value)")
                             if value {
-                                print("toggle -> donateItem()");
                                 insect.donateItem()
                             } else {
-                                print("toggle -> undonateItem()");
                                 insect.undonateItem()
                             }
                         }
@@ -106,7 +91,6 @@ struct InsectCell: View {
             }
             .onTapGesture {
                 // do nothing
-                print("nothing")
             }
         }
         .contentShape(Rectangle())
@@ -120,8 +104,7 @@ struct InsectCell: View {
                 .resizable()
                 .scaledToFit()
                 .brightness(insect.isObtained ? 0 : -1)
-//                .opacity(insect.isObtained ? 1 : 0.7)
-                .scaleEffect(0.5)
+                .scaleEffect(0.6)
         )
         .background(
             Image(uiImage: UIImage(named: "background") ?? UIImage())
@@ -138,6 +121,6 @@ struct InsectCell: View {
 
 struct InsectCell_Previews: PreviewProvider {
     static var previews: some View {
-        InsectCell(insect: Insect.sample) {}
+        InsectGridCell(insect: Insect.sample) {}
     }
 }

@@ -36,11 +36,6 @@ struct MainView: View {
     var body: some View {
         ScrollViewReader { proxy in
             TabView(selection: handler) {
-    //            ContentView()
-    //                .tabItem {
-    //                    Label("Content", systemImage: "list.dash")
-    //                }
-
                 InsectList()
                     .onChange(of: tappedTwice) { tapped in
                         if tapped && tabSelection == 0 {

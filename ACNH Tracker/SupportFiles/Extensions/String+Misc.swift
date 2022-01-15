@@ -1,5 +1,5 @@
 //
-//  String+ContainsWord.swift
+//  String+Misc.swift
 //  ACNH Tracker
 //
 //  Created by Tim Nance on 12/30/21.
@@ -12,4 +12,7 @@ extension String {
         return " \(self)".contains(" \(searchText.lowercased())")
     }
 
+    func ucFirst() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
 }
