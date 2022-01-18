@@ -10,20 +10,12 @@ import SwiftUI
 struct ActiveHours: View {
     let hoursActive: Set<Int>
     let monthsAvailable: Set<Int>
-    @State var latestCurrentDate = Date()
-    let timer = Timer.publish(every: 60*5, on: .main, in: .common).autoconnect()
-
-    var timeAsPercentageOfDay: CGFloat {
-        let calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
-        let hour = calendar.component(.hour, from: latestCurrentDate)
-        let minute = calendar.component(.minute, from: latestCurrentDate)
-        return CGFloat(hour * 60 + minute) / CGFloat(24 * 60)
-    }
 
     private struct Config {
         static let borderWidth:CGFloat = 1.0
         static let availableColor = Color(red: 184 / 255, green: 210 / 255, blue: 82 / 255)
         static let borderAndTextColor = Color(red: 92 / 255, green: 85 / 255, blue: 60 / 255)
+        static let currentTimeMarkerColor = Color.red
         static let currentTimeMarkerHeight = 20.0
         static let currentTimeMarkerOffsetY = 2.0
     }
@@ -60,9 +52,10 @@ struct ActiveHours: View {
             .frame(height: 10)
 
             // draw active time plot
+            // TODO: refactor into Canvas? (https://www.gfrigerio.com/introduction-to-canvas-in-swiftui/)
             GeometryReader { geo in
                 ZStack(alignment: .bottomLeading) {
-                    // draw grid lines
+                    // grid lines
                     ForEach(0..<25) { mark in
                         Rectangle()
                             .fill(Config.borderAndTextColor)
@@ -71,6 +64,7 @@ struct ActiveHours: View {
                             .zIndex(1)
                     }
 
+                    // active time window(s)
                     ForEach(getActiveHourRanges(), id: \.0) { (startHour, endHour) in
                         Rectangle()
                             .fill(Config.availableColor)
@@ -86,7 +80,7 @@ struct ActiveHours: View {
                             .zIndex(0)
                     }
 
-                    // square out rounded corners if active through midnight
+                    // square out time window rounded corners if active through midnight
                     if hoursActive.contains(0) && hoursActive.contains(23) {
                         Rectangle()
                             .fill(Config.availableColor)
@@ -113,42 +107,44 @@ struct ActiveHours: View {
                     }
 
                     // current time marker
-                    Rectangle()
-                        .fill(Color.red)
-                        .frame(
-                            width: Config.borderWidth * 2,
-                            height: Config.currentTimeMarkerHeight
-                        )
-                        .offset(
-                            x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay,
-                            y: Config.currentTimeMarkerOffsetY
-                        )
-                        .zIndex(2)
-                        .onReceive(timer) { _ in
-                            self.latestCurrentDate = Date()
+                    TimelineView(.periodic(from: .now, by: 5 * 60)) { context in
+                        let timeAsPercentageOfDay = getTimeAsPercentageOfDay(context.date)
+                        ZStack(alignment: .bottomLeading) {
+                            Rectangle()
+                                .fill(Config.currentTimeMarkerColor)
+                                .frame(
+                                    width: Config.borderWidth * 2,
+                                    height: Config.currentTimeMarkerHeight
+                                )
+                                .offset(
+                                    x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay,
+                                    y: Config.currentTimeMarkerOffsetY
+                                )
+                                .zIndex(2)
+                            Rectangle()
+                                .fill(Config.currentTimeMarkerColor)
+                                .frame(
+                                    width: Config.borderWidth * 4,
+                                    height: Config.borderWidth
+                                )
+                                .offset(
+                                    x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay - Config.borderWidth,
+                                    y: Config.currentTimeMarkerOffsetY - Config.currentTimeMarkerHeight
+                                )
+                                .zIndex(2)
+                            Rectangle()
+                                .fill(Config.currentTimeMarkerColor)
+                                .frame(
+                                    width: Config.borderWidth * 4,
+                                    height: Config.borderWidth
+                                )
+                                .offset(
+                                    x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay - Config.borderWidth,
+                                    y: Config.currentTimeMarkerOffsetY
+                                )
+                                .zIndex(2)
                         }
-                    Rectangle()
-                        .fill(Color.red)
-                        .frame(
-                            width: Config.borderWidth * 4,
-                            height: Config.borderWidth
-                        )
-                        .offset(
-                            x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay - Config.borderWidth,
-                            y: Config.currentTimeMarkerOffsetY - Config.currentTimeMarkerHeight
-                        )
-                        .zIndex(2)
-                    Rectangle()
-                        .fill(Color.red)
-                        .frame(
-                            width: Config.borderWidth * 4,
-                            height: Config.borderWidth
-                        )
-                        .offset(
-                            x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay - Config.borderWidth,
-                            y: Config.currentTimeMarkerOffsetY
-                        )
-                        .zIndex(2)
+                    }
                 }
             }
             .frame(height: 20)
@@ -192,6 +188,13 @@ struct ActiveHours: View {
 
     private func isAvailableInCurrentMonth() -> Bool {
         return monthsAvailable.contains(Globals.currentMonthIndex)
+    }
+
+    private func getTimeAsPercentageOfDay(_ date: Date) -> CGFloat {
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        return CGFloat(hour * 60 + minute) / CGFloat(24 * 60)
     }
 }
 
