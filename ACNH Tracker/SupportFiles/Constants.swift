@@ -9,10 +9,10 @@ import UIKit
 
 public struct Constants {
     static let monthFirstLetters = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"]
-//    struct Colors {
-//        static let clear = UIColor.clear
+    struct Colors {
+        static let clear = UIColor.clear
 //        static let label = UIColor(named: "label")!
-//
+
 //        static let mainViewBg = UIColor(named: "mainViewBg")!
 //
 //        static let tint = UIColor(named: "tint")!
@@ -42,7 +42,7 @@ public struct Constants {
 //        static let toastErrorBg = UIColor(named: "toastErrorBg")!
 //        static let toastWarningBg = UIColor(named: "toastWarningBg")!
 //        static let toastInfoBg = UIColor(named: "toastInfoBg")!
-//    }
+    }
 
 //    struct Habit {
 //        // mirrors the default Habit.frequencyPerWeek attribute in DataModel.xcdatamodel

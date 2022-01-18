@@ -153,6 +153,7 @@ struct InsectList: View {
                             LazyVGrid(columns: layoutGrid, spacing: 5) {
                                 ForEach(filteredAndSortedInsectItems, id: \.self.name) { insect in
                                     InsectGridCell(insect: insect) {
+                                        selectedInsect = nil // potential fix for rare bug where tapping doesn't open sheet
                                         selectedInsect = insect
                                     }
                                 }
@@ -169,6 +170,7 @@ struct InsectList: View {
                             LazyVGrid(columns: layoutList, spacing: 5) {
                                 ForEach(filteredAndSortedInsectItems, id: \.self.name) { insect in
                                     InsectRow(insect: insect) {
+                                        selectedInsect = nil // potential fix for rare bug where tapping doesn't open sheet
                                         selectedInsect = insect
                                     }
                                 }

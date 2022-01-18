@@ -150,11 +150,37 @@ struct InsectDetail: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 10)
 
-                HStack(spacing: 6) {
-                    Text("**Availability:**")
+//                HStack(spacing: 6) {
+//                    Text("**Seasonality:**")
+//                        .font(.system(size: 18))
+//                        .foregroundColor(.gray)
+//                    MonthAvailability(monthsAvailable: insect.monthsNorthern)
+//                }
+//                .padding(.bottom, 10)
+                VStack(spacing: 6) {
+                    Text("**Seasonality:**")
                         .font(.system(size: 18))
                         .foregroundColor(.gray)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     MonthAvailability(monthsAvailable: insect.monthsNorthern)
+                        .padding(.horizontal, 10)
+                }
+                .padding(.bottom, 10)
+
+//                HStack(spacing: 6) {
+//                    Text("**Active Hours:**")
+//                        .font(.system(size: 18))
+//                        .foregroundColor(.gray)
+//                    ActiveHours(hoursActive: insect.hours, monthsAvailable: insect.monthsNorthern)
+//                }
+//                .padding(.bottom, 10)
+                VStack(spacing: 6) {
+                    Text("**Active Hours:**")
+                        .font(.system(size: 18))
+                        .foregroundColor(.gray)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    ActiveHours(hoursActive: insect.hours, monthsAvailable: insect.monthsNorthern)
+                        .padding(.horizontal, 10)
                 }
                 .padding(.bottom, 10)
             }
