@@ -27,6 +27,7 @@ struct InsectList: View {
 
     public static let scrollTopId = UUID()
     private let cellHeight = 130.0
+    // TODO: refactor into MVVM (https://www.youtube.com/watch?v=FwGMU_Grnf8)
     private let allInsectItems = Insect.getAll()
 
     @State private var selectedInsect: Insect? = nil

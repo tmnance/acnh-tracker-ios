@@ -13,25 +13,6 @@ struct InsectRow: View {
     @ObservedObject var insect: Insect
     let onTap: () -> Void
 
-    // TODO: refactor to shared fn
-    private func getBgColor(_ insect: Insect) -> Color {
-        return (insect.isDonated ?
-            Color(red: 0.8, green: 1, blue: 0.8) :
-            insect.isObtained ?
-                Color(red: 1, green: 1, blue: 0.8) :
-                Color(red: 0.8, green: 0.8, blue: 0.8)
-        ).opacity(0.7)
-    }
-
-    // TODO: refactor to shared fn
-    private func getBgColor2(_ insect: Insect) -> Color {
-        return insect.isDonated ?
-            .green :
-            insect.isObtained ?
-                .yellow :
-                .gray
-    }
-
     var body: some View {
         HStack {
             Image(uiImage: UIImage(named: "Insect/\(insect.imageName)") ?? UIImage())
@@ -64,14 +45,17 @@ struct InsectRow: View {
                         }
                 }
                 .padding(5)
-                .background(self.getBgColor(insect))
+                .background(Constants.Colors.getStatusBgColor(
+                    isObtained: insect.isObtained,
+                    isDonated: insect.isDonated
+                ))
                 .cornerRadius(10)
                 
                 HStack(spacing: 0) {
                     Image(uiImage: UIImage(named: "donate") ?? UIImage())
                         .resizable()
                         .scaledToFit()
-                        .foregroundColor(Color(red: 102/255, green: 102/255,blue: 102/255))
+                        .foregroundColor(Constants.Colors.donateIconFill)
                         .frame(height: 26)
                         .padding(.trailing, 3)
                     Toggle("", isOn: $insect.isDonated)
@@ -86,7 +70,10 @@ struct InsectRow: View {
                         }
                 }
                 .padding(5)
-                .background(self.getBgColor(insect))
+                .background(Constants.Colors.getStatusBgColor(
+                    isObtained: insect.isObtained,
+                    isDonated: insect.isDonated
+                ))
                 .cornerRadius(10)
             }
             .padding(.trailing, 6)
@@ -109,7 +96,10 @@ struct InsectRow: View {
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(lineWidth: 2)
-                .foregroundColor(self.getBgColor2(insect))
+                .foregroundColor(Constants.Colors.getStatusBorderColor(
+                    isObtained: insect.isObtained,
+                    isDonated: insect.isDonated
+                ))
         )
     }
 }

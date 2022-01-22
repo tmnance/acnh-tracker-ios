@@ -5,12 +5,55 @@
 //  Created by Tim Nance on 12/12/21.
 //
 
-import UIKit
+import SwiftUI
 
 public struct Constants {
     static let monthFirstLetters = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"]
     struct Colors {
-        static let clear = UIColor.clear
+        static let primaryText = Color(red: 92 / 255, green: 85 / 255, blue: 60 / 255)
+        static let primaryBorder = Color(red: 92 / 255, green: 85 / 255, blue: 60 / 255)
+
+        static let rangeActiveHighlight = Color(red: 184 / 255, green: 210 / 255, blue: 82 / 255)
+        static let rangeCurrentMarker = Color.red
+
+        static let donateIconFill = Color(red: 102/255, green: 102/255,blue: 102/255)
+
+        static let statusIncompleteText = primaryText
+        static let statusCompleteText = Color.green
+
+        static let statusNotYetObtainedBg = Color(red: 0.8, green: 0.8, blue: 0.8).opacity(0.7)
+        static let statusObtainedButNotYetDonatedBg = Color(red: 1, green: 1, blue: 0.8).opacity(0.7)
+        static let statusCompleteBg = Color(red: 0.8, green: 1, blue: 0.8).opacity(0.7)
+
+        static let statusNotYetObtainedBorder = Color.gray
+        static let statusObtainedButNotYetDonatedBorder = Color.yellow
+        static let statusCompleteBorder = Color.green
+
+        static func getStatusBgColor(isObtained: Bool, isDonated: Bool? = nil) -> Color {
+            guard let isDonated = isDonated else {
+                return isObtained ? statusCompleteBg : statusNotYetObtainedBg
+            }
+
+            return isDonated ?
+                statusCompleteBg :
+                isObtained ?
+                    statusObtainedButNotYetDonatedBg :
+                    statusNotYetObtainedBg
+        }
+
+        static func getStatusBorderColor(isObtained: Bool, isDonated: Bool? = nil) -> Color {
+            guard let isDonated = isDonated else {
+                return isObtained ? statusCompleteBorder : statusNotYetObtainedBorder
+            }
+
+            return isDonated ?
+                statusCompleteBorder :
+                isObtained ?
+                    statusObtainedButNotYetDonatedBorder :
+                    statusNotYetObtainedBorder
+        }
+
+//        static let clear = UIColor.clear
 //        static let label = UIColor(named: "label")!
 
 //        static let mainViewBg = UIColor(named: "mainViewBg")!

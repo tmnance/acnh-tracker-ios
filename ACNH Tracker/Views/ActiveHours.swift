@@ -12,10 +12,7 @@ struct ActiveHours: View {
     let monthsAvailable: Set<Int>
 
     private struct Config {
-        static let borderWidth:CGFloat = 1.0
-        static let availableColor = Color(red: 184 / 255, green: 210 / 255, blue: 82 / 255)
-        static let borderAndTextColor = Color(red: 92 / 255, green: 85 / 255, blue: 60 / 255)
-        static let currentTimeMarkerColor = Color.red
+        static let gridLineWidth:CGFloat = 1.0
         static let currentTimeMarkerHeight = 20.0
         static let currentTimeMarkerOffsetY = 2.0
     }
@@ -29,8 +26,8 @@ struct ActiveHours: View {
                         ForEach(0..<2) { dayAmPmSegment in
                             Text("\(dayAmPmSegment == 0 ? "AM" : "PM")")
                                 .font(.system(size: 8))
-                                .foregroundColor(Config.borderAndTextColor)
-                                .offset(x: ((geo.size.width - Config.borderWidth) / 2) * CGFloat(dayAmPmSegment))
+                                .foregroundColor(Constants.Colors.primaryText)
+                                .offset(x: ((geo.size.width - Config.gridLineWidth) / 2) * CGFloat(dayAmPmSegment))
                         }
                     }
                 }
@@ -44,8 +41,8 @@ struct ActiveHours: View {
                         let hourDisplay = "\(Globals.useAmPm ? abs(daySixHourSegment * 6 - 6) % 12 + 6 : daySixHourSegment * 6)"
                         Text("\(hourDisplay)")
                             .font(.system(size: 8))
-                            .foregroundColor(Config.borderAndTextColor)
-                            .offset(x: ((geo.size.width - Config.borderWidth) / 4) * CGFloat(daySixHourSegment))
+                            .foregroundColor(Constants.Colors.primaryText)
+                            .offset(x: ((geo.size.width - Config.gridLineWidth) / 4) * CGFloat(daySixHourSegment))
                     }
                 }
             }
@@ -58,23 +55,23 @@ struct ActiveHours: View {
                     // grid lines
                     ForEach(0..<25) { mark in
                         Rectangle()
-                            .fill(Config.borderAndTextColor)
-                            .frame(width: Config.borderWidth, height: getMarkHeight(mark))
-                            .offset(x: CGFloat(mark) * ((geo.size.width - Config.borderWidth) / 24), y: 0)
+                            .fill(Constants.Colors.primaryBorder)
+                            .frame(width: Config.gridLineWidth, height: getMarkHeight(mark))
+                            .offset(x: CGFloat(mark) * ((geo.size.width - Config.gridLineWidth) / 24), y: 0)
                             .zIndex(1)
                     }
 
                     // active time window(s)
                     ForEach(getActiveHourRanges(), id: \.0) { (startHour, endHour) in
                         Rectangle()
-                            .fill(Config.availableColor)
+                            .fill(Constants.Colors.rangeActiveHighlight)
                             .cornerRadius(5)
                             .frame(
-                                width: ((geo.size.width - Config.borderWidth) / 24) * CGFloat(endHour - startHour + 1),
+                                width: ((geo.size.width - Config.gridLineWidth) / 24) * CGFloat(endHour - startHour + 1),
                                 height: 10.0
                             )
                             .offset(
-                                x: ((geo.size.width - Config.borderWidth) / 24) * CGFloat(startHour),
+                                x: ((geo.size.width - Config.gridLineWidth) / 24) * CGFloat(startHour),
                                 y: -2
                             )
                             .zIndex(0)
@@ -83,9 +80,9 @@ struct ActiveHours: View {
                     // square out time window rounded corners if active through midnight
                     if hoursActive.contains(0) && hoursActive.contains(23) {
                         Rectangle()
-                            .fill(Config.availableColor)
+                            .fill(Constants.Colors.rangeActiveHighlight)
                             .frame(
-                                width: ((geo.size.width - Config.borderWidth) / 24) / 2,
+                                width: ((geo.size.width - Config.gridLineWidth) / 24) / 2,
                                 height: 10.0
                             )
                             .offset(
@@ -94,13 +91,13 @@ struct ActiveHours: View {
                             )
                             .zIndex(0)
                         Rectangle()
-                            .fill(Config.availableColor)
+                            .fill(Constants.Colors.rangeActiveHighlight)
                             .frame(
-                                width: ((geo.size.width - Config.borderWidth) / 24) / 2,
+                                width: ((geo.size.width - Config.gridLineWidth) / 24) / 2,
                                 height: 10.0
                             )
                             .offset(
-                                x: ((geo.size.width - Config.borderWidth) / 24) * 23.5,
+                                x: ((geo.size.width - Config.gridLineWidth) / 24) * 23.5,
                                 y: -2
                             )
                             .zIndex(0)
@@ -111,35 +108,35 @@ struct ActiveHours: View {
                         let timeAsPercentageOfDay = getTimeAsPercentageOfDay(context.date)
                         ZStack(alignment: .bottomLeading) {
                             Rectangle()
-                                .fill(Config.currentTimeMarkerColor)
+                                .fill(Constants.Colors.rangeCurrentMarker)
                                 .frame(
-                                    width: Config.borderWidth * 2,
+                                    width: Config.gridLineWidth * 2,
                                     height: Config.currentTimeMarkerHeight
                                 )
                                 .offset(
-                                    x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay,
+                                    x: (geo.size.width - Config.gridLineWidth) * timeAsPercentageOfDay,
                                     y: Config.currentTimeMarkerOffsetY
                                 )
                                 .zIndex(2)
                             Rectangle()
-                                .fill(Config.currentTimeMarkerColor)
+                                .fill(Constants.Colors.rangeCurrentMarker)
                                 .frame(
-                                    width: Config.borderWidth * 4,
-                                    height: Config.borderWidth
+                                    width: Config.gridLineWidth * 4,
+                                    height: Config.gridLineWidth
                                 )
                                 .offset(
-                                    x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay - Config.borderWidth,
+                                    x: (geo.size.width - Config.gridLineWidth) * timeAsPercentageOfDay - Config.gridLineWidth,
                                     y: Config.currentTimeMarkerOffsetY - Config.currentTimeMarkerHeight
                                 )
                                 .zIndex(2)
                             Rectangle()
-                                .fill(Config.currentTimeMarkerColor)
+                                .fill(Constants.Colors.rangeCurrentMarker)
                                 .frame(
-                                    width: Config.borderWidth * 4,
-                                    height: Config.borderWidth
+                                    width: Config.gridLineWidth * 4,
+                                    height: Config.gridLineWidth
                                 )
                                 .offset(
-                                    x: (geo.size.width - Config.borderWidth) * timeAsPercentageOfDay - Config.borderWidth,
+                                    x: (geo.size.width - Config.gridLineWidth) * timeAsPercentageOfDay - Config.gridLineWidth,
                                     y: Config.currentTimeMarkerOffsetY
                                 )
                                 .zIndex(2)
@@ -150,8 +147,8 @@ struct ActiveHours: View {
             .frame(height: 20)
 
             Rectangle()
-                .fill(Config.borderAndTextColor)
-                .frame(maxWidth: .infinity, minHeight: Config.borderWidth, maxHeight: Config.borderWidth)
+                .fill(Constants.Colors.primaryBorder)
+                .frame(maxWidth: .infinity, minHeight: Config.gridLineWidth, maxHeight: Config.gridLineWidth)
         }
         .padding(.horizontal, 10)
         .opacity(isAvailableInCurrentMonth() ? 1 : 0.5)

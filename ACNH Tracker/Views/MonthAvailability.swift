@@ -9,34 +9,34 @@ import SwiftUI
 
 struct MonthAvailability: View {
     let monthsAvailable: Set<Int>
-    private let currentColor = Color.white
-    private let availableColor = Color(red: 184 / 255, green: 210 / 255, blue: 82 / 255)
-    private let borderAndTextColor = Color(red: 92 / 255, green: 85 / 255, blue: 60 / 255)
+    
+    private struct Config {
+        static let monthBoxBorderWidth:CGFloat = 0.5
+    }
 
     var body: some View {
         HStack(spacing: 0) {
             ForEach(Array(zip(Constants.monthFirstLetters.indices, Constants.monthFirstLetters)), id: \.0) { index, month in
-                Text("**\(month)**")//isCurrMonth(index) ? "**\(month)**" : "\(month)")
+                Text("**\(month)**")
                     .font(.system(size: 10))
                     .glowBorder(color: .white, lineWidth: 1)
-                    .foregroundColor(borderAndTextColor)
+                    .foregroundColor(Constants.Colors.primaryText)
                     .fixedSize(horizontal: false, vertical: true)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, maxHeight: 16)
-//                    .padding(1)
                     .background(
                         RoundedRectangle(cornerRadius: 4)
-                            .foregroundColor(isAvailableMonth(index) ? availableColor : .clear)
+                            .foregroundColor(isAvailableMonth(index) ? Constants.Colors.rangeActiveHighlight : .clear)
                     )
                     .padding(2)
-                    .border(isCurrentMonth(index) ? Color.red : .clear, width: 1.5)
+                    .border(isCurrentMonth(index) ? Constants.Colors.rangeCurrentMarker : .clear, width: 1.5)
                     .padding(1)
-                    .border(borderAndTextColor, width: 0.5)
-                    .padding(.leading, -0.5)
-                    .opacity(isAvailableMonth(index) ? 1 : 0.5)
+                    .border(Constants.Colors.primaryBorder, width: Config.monthBoxBorderWidth)
+                    .padding(.leading, -Config.monthBoxBorderWidth)
+                    .opacity(isAvailableMonth(index) ? 1 : Config.monthBoxBorderWidth)
             }
         }
-        .padding(.leading, 0.5)
+        .padding(.leading, Config.monthBoxBorderWidth)
     }
     
     private func isCurrentMonth(_ index: Int) -> Bool {
