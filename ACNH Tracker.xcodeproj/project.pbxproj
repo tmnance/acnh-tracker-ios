@@ -27,7 +27,6 @@
 		1CC9F4CE274BED9300AB1E68 /* ArtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9F4CD274BED9300AB1E68 /* ArtCell.swift */; };
 		1CD363D72751468F005C4AC6 /* ArtDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD363D62751468E005C4AC6 /* ArtDetailsView.swift */; };
 		1CFC44172749409700A5B232 /* ACNH_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC44162749409700A5B232 /* ACNH_TrackerApp.swift */; };
-		1CFC44192749409700A5B232 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC44182749409700A5B232 /* ContentView.swift */; };
 		1CFC441B2749409900A5B232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFC441A2749409900A5B232 /* Assets.xcassets */; };
 		1CFC441E2749409900A5B232 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFC441D2749409900A5B232 /* Preview Assets.xcassets */; };
 		1CFC44202749409900A5B232 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC441F2749409900A5B232 /* Persistence.swift */; };
@@ -58,7 +57,6 @@
 		1CD363D62751468E005C4AC6 /* ArtDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailsView.swift; sourceTree = "<group>"; };
 		1CFC44132749409700A5B232 /* ACNH Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ACNH Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFC44162749409700A5B232 /* ACNH_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNH_TrackerApp.swift; sourceTree = "<group>"; };
-		1CFC44182749409700A5B232 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CFC441A2749409900A5B232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CFC441D2749409900A5B232 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1CFC441F2749409900A5B232 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				1CFC44162749409700A5B232 /* ACNH_TrackerApp.swift */,
 				1CB4227B279CCF2100D957A2 /* Art */,
 				1CB4227C279CCF3300D957A2 /* Components */,
-				1CFC44182749409700A5B232 /* ContentView.swift */,
 				1CB4227A279CCF1100D957A2 /* Insect */,
 				1C2D4BDD277A630D00D64451 /* MainView.swift */,
 			);
@@ -274,7 +271,6 @@
 			files = (
 				1C2D4BE6277E0A5900D64451 /* InsectGridCell.swift in Sources */,
 				1CFC44202749409900A5B232 /* Persistence.swift in Sources */,
-				1CFC44192749409700A5B232 /* ContentView.swift in Sources */,
 				1C2D4BEA277E24CE00D64451 /* MonthAvailability.swift in Sources */,
 				1C2D4BEC277E312B00D64451 /* Globals.swift in Sources */,
 				1C47638D2766938E002389F2 /* ObtainedItem.swift in Sources */,

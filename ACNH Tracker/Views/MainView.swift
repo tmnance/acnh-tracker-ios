@@ -8,59 +8,60 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var tabSelection = 0
-    @State private var tappedTwice: Bool = false
+    private enum Tab: Hashable {
+        case insects
+        case art
+    }
 
-    var handler: Binding<Int> {
+    @State private var tabSelection: Tab = .insects
+    @State private var tappedTwice: Bool = false
+    private var tabSelectionHandler: Binding<Tab> {
         Binding(
             get: { self.tabSelection },
             set: {
-                if $0 == self.tabSelection { // Lands here if user tapped more than once
+                if $0 == self.tabSelection { // user tapped more than once
                     tappedTwice = true
                 }
-                print("self.tabSelection = \(self.tabSelection)")
-                print("tappedTwice = \(self.tappedTwice)")
                 self.tabSelection = $0
             }
         )
     }
 
-    func scrollToTop(proxy: ScrollViewProxy, scrollId: UUID) {
-        print("scrollToTop! tabSelection=\(tabSelection), scrollId=\(scrollId)")
-        withAnimation {
-            proxy.scrollTo(scrollId, anchor: .top)
-        }
-        tappedTwice = false
-    }
-
     var body: some View {
         ScrollViewReader { proxy in
-            TabView(selection: handler) {
+            TabView(selection: tabSelectionHandler) {
                 InsectListView()
                     .onChange(of: tappedTwice) { tapped in
-                        if tapped && tabSelection == 0 {
+                        if tapped && tabSelection == Tab.insects {
                             scrollToTop(proxy: proxy, scrollId: InsectListView.scrollTopId)
                         }
                     }
                     .tabItem {
                         Label("Insects", systemImage: "ladybug")
                     }
-                    .tag(0)
+                    .tag(Tab.insects)
 
                 ArtListView()
                     .onChange(of: tappedTwice) { tapped in
-                        if tapped && tabSelection == 1 {
+                        if tapped && tabSelection == Tab.art {
                             scrollToTop(proxy: proxy, scrollId: ArtListView.scrollTopId)
                         }
                     }
                     .tabItem {
                         Label("Art", systemImage: "person.crop.artframe")
                     }
-                    .tag(1)
+                    .tag(Tab.art)
             }
             .accentColor(.purple)
             .preferredColorScheme(.light)
         }
+    }
+
+    func scrollToTop(proxy: ScrollViewProxy, scrollId: UUID) {
+        withAnimation {
+            proxy.scrollTo(scrollId, anchor: .top)
+        }
+        tappedTwice = false
     }
 }
 

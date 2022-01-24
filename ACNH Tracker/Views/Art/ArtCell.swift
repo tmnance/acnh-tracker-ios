@@ -43,13 +43,9 @@ struct ArtCell: View {
                     .labelsHidden()
                     .frame(minWidth: 0)
                     .onChange(of: art.isDonated) { value in
-                        // action...
-                        print("toggle clicked! \(value)")
                         if value {
-                            print("toggle -> obtainItem()");
                             art.obtainItem()
                         } else {
-                            print("toggle -> unobtainItem()");
                             art.unobtainItem()
                         }
                     }

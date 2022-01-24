@@ -19,6 +19,17 @@ struct InsectListView: View {
         GridItem(.flexible()),
     ]
 
+    init() {
+        // fixes display issues caused by toggling the filter view
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.shadowImage = UIImage()
+        navBarAppearance.shadowColor = .clear
+        navBarAppearance.backgroundColor = .clear
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+    }
+
     var body: some View {
         NavigationView {
             VStack {
