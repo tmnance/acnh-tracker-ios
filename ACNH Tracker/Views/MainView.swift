@@ -36,10 +36,10 @@ struct MainView: View {
     var body: some View {
         ScrollViewReader { proxy in
             TabView(selection: handler) {
-                InsectList()
+                InsectListView()
                     .onChange(of: tappedTwice) { tapped in
                         if tapped && tabSelection == 0 {
-                            scrollToTop(proxy: proxy, scrollId: InsectList.scrollTopId)
+                            scrollToTop(proxy: proxy, scrollId: InsectListView.scrollTopId)
                         }
                     }
                     .tabItem {
@@ -47,10 +47,10 @@ struct MainView: View {
                     }
                     .tag(0)
 
-                ArtList()
+                ArtListView()
                     .onChange(of: tappedTwice) { tapped in
                         if tapped && tabSelection == 1 {
-                            scrollToTop(proxy: proxy, scrollId: ArtList.scrollTopId)
+                            scrollToTop(proxy: proxy, scrollId: ArtListView.scrollTopId)
                         }
                     }
                     .tabItem {

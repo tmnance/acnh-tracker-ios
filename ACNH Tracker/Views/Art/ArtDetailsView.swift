@@ -1,5 +1,5 @@
 //
-//  ArtDetail.swift
+//  ArtDetailsView.swift
 //  ACNH Tracker
 //
 //  Created by Tim Nance on 11/26/21.
@@ -8,7 +8,7 @@
 import SwiftUI
 import PDFKit
 
-struct ArtDetail: View {
+struct ArtDetailsView: View {
     @State private var zooming: Bool = false
     @Environment(\.dismiss) var dismiss
     let art: Art
@@ -84,6 +84,6 @@ struct ArtDetail: View {
 
 struct ArtDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ArtDetail(art: Art.sample)
+        ArtDetailsView(art: Art.sample)
     }
 }

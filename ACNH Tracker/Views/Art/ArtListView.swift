@@ -1,5 +1,5 @@
 //
-//  ArtList.swift
+//  ArtListView.swift
 //  ACNH Tracker
 //
 //  Created by Tim Nance on 11/22/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtList: View {
+struct ArtListView: View {
     public static let scrollTopId = UUID()
     private let cellHeight = 130.0
     private let allArtItems = Art.getAll()
@@ -28,7 +28,7 @@ struct ArtList: View {
         NavigationView {
             ScrollView {
                 EmptyView()
-                    .id(ArtList.scrollTopId)
+                    .id(ArtListView.scrollTopId)
 
                 LazyVGrid(columns: layout, spacing: 5) {
                     ForEach(getFilteredArtItems()) { art in
@@ -40,7 +40,7 @@ struct ArtList: View {
                 .padding(.horizontal, 5)
             }
             .sheet(item: $selectedArt) { item in
-                ArtDetail(art: item)
+                ArtDetailsView(art: item)
             }
             .navigationTitle("Art")
             .navigationBarTitleDisplayMode(.inline)
@@ -52,6 +52,6 @@ struct ArtList: View {
 
 struct ArtList_Previews: PreviewProvider {
     static var previews: some View {
-        ArtList()
+        ArtListView()
     }
 }

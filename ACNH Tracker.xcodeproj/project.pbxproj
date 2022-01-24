@@ -9,22 +9,23 @@
 /* Begin PBXBuildFile section */
 		1C2D4BDE277A630D00D64451 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BDD277A630D00D64451 /* MainView.swift */; };
 		1C2D4BE0277CDD1300D64451 /* InsectSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C2D4BDF277CDD1300D64451 /* InsectSeed.json */; };
-		1C2D4BE2277E087300D64451 /* InsectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BE1277E087300D64451 /* InsectList.swift */; };
+		1C2D4BE2277E087300D64451 /* InsectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BE1277E087300D64451 /* InsectListView.swift */; };
 		1C2D4BE4277E08C200D64451 /* Insect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BE3277E08C200D64451 /* Insect.swift */; };
 		1C2D4BE6277E0A5900D64451 /* InsectGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BE5277E0A5900D64451 /* InsectGridCell.swift */; };
-		1C2D4BE8277E0A6400D64451 /* InsectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BE7277E0A6400D64451 /* InsectDetail.swift */; };
+		1C2D4BE8277E0A6400D64451 /* InsectDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BE7277E0A6400D64451 /* InsectDetailsView.swift */; };
 		1C2D4BEA277E24CE00D64451 /* MonthAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BE9277E24CE00D64451 /* MonthAvailability.swift */; };
 		1C2D4BEC277E312B00D64451 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BEB277E312B00D64451 /* Globals.swift */; };
 		1C2D4BEF277E49FA00D64451 /* View+GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BEE277E49FA00D64451 /* View+GlowBorder.swift */; };
 		1C2D4BF6277EB60F00D64451 /* String+Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D4BF5277EB60F00D64451 /* String+Misc.swift */; };
+		1C3A3CE0279DC4C500C4C9D8 /* InsectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A3CDF279DC4C500C4C9D8 /* InsectListViewModel.swift */; };
 		1C47638D2766938E002389F2 /* ObtainedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C47638C2766938E002389F2 /* ObtainedItem.swift */; };
 		1C47638F27669410002389F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C47638E27669410002389F2 /* Constants.swift */; };
 		1C923C2C2791EBF300BAB802 /* SearchText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C923C2B2791EBF300BAB802 /* SearchText.swift */; };
 		1C923C3027933CAF00BAB802 /* InsectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C923C2F27933CAF00BAB802 /* InsectRow.swift */; };
 		1C923C322794783900BAB802 /* ActiveHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C923C312794783900BAB802 /* ActiveHours.swift */; };
-		1CC9F4CC274BE71A00AB1E68 /* ArtList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9F4CB274BE71A00AB1E68 /* ArtList.swift */; };
+		1CC9F4CC274BE71A00AB1E68 /* ArtListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9F4CB274BE71A00AB1E68 /* ArtListView.swift */; };
 		1CC9F4CE274BED9300AB1E68 /* ArtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9F4CD274BED9300AB1E68 /* ArtCell.swift */; };
-		1CD363D72751468F005C4AC6 /* ArtDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD363D62751468E005C4AC6 /* ArtDetail.swift */; };
+		1CD363D72751468F005C4AC6 /* ArtDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD363D62751468E005C4AC6 /* ArtDetailsView.swift */; };
 		1CFC44172749409700A5B232 /* ACNH_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC44162749409700A5B232 /* ACNH_TrackerApp.swift */; };
 		1CFC44192749409700A5B232 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC44182749409700A5B232 /* ContentView.swift */; };
 		1CFC441B2749409900A5B232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CFC441A2749409900A5B232 /* Assets.xcassets */; };
@@ -38,22 +39,23 @@
 /* Begin PBXFileReference section */
 		1C2D4BDD277A630D00D64451 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1C2D4BDF277CDD1300D64451 /* InsectSeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InsectSeed.json; sourceTree = "<group>"; };
-		1C2D4BE1277E087300D64451 /* InsectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectList.swift; sourceTree = "<group>"; };
+		1C2D4BE1277E087300D64451 /* InsectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectListView.swift; sourceTree = "<group>"; };
 		1C2D4BE3277E08C200D64451 /* Insect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insect.swift; sourceTree = "<group>"; };
 		1C2D4BE5277E0A5900D64451 /* InsectGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectGridCell.swift; sourceTree = "<group>"; };
-		1C2D4BE7277E0A6400D64451 /* InsectDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectDetail.swift; sourceTree = "<group>"; };
+		1C2D4BE7277E0A6400D64451 /* InsectDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectDetailsView.swift; sourceTree = "<group>"; };
 		1C2D4BE9277E24CE00D64451 /* MonthAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthAvailability.swift; sourceTree = "<group>"; };
 		1C2D4BEB277E312B00D64451 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		1C2D4BEE277E49FA00D64451 /* View+GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+GlowBorder.swift"; sourceTree = "<group>"; };
 		1C2D4BF5277EB60F00D64451 /* String+Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Misc.swift"; sourceTree = "<group>"; };
+		1C3A3CDF279DC4C500C4C9D8 /* InsectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectListViewModel.swift; sourceTree = "<group>"; };
 		1C47638C2766938E002389F2 /* ObtainedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainedItem.swift; sourceTree = "<group>"; };
 		1C47638E27669410002389F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1C923C2B2791EBF300BAB802 /* SearchText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchText.swift; sourceTree = "<group>"; };
 		1C923C2F27933CAF00BAB802 /* InsectRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectRow.swift; sourceTree = "<group>"; };
 		1C923C312794783900BAB802 /* ActiveHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveHours.swift; sourceTree = "<group>"; };
-		1CC9F4CB274BE71A00AB1E68 /* ArtList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtList.swift; sourceTree = "<group>"; };
+		1CC9F4CB274BE71A00AB1E68 /* ArtListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtListView.swift; sourceTree = "<group>"; };
 		1CC9F4CD274BED9300AB1E68 /* ArtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCell.swift; sourceTree = "<group>"; };
-		1CD363D62751468E005C4AC6 /* ArtDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetail.swift; sourceTree = "<group>"; };
+		1CD363D62751468E005C4AC6 /* ArtDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailsView.swift; sourceTree = "<group>"; };
 		1CFC44132749409700A5B232 /* ACNH Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ACNH Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CFC44162749409700A5B232 /* ACNH_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNH_TrackerApp.swift; sourceTree = "<group>"; };
 		1CFC44182749409700A5B232 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,38 @@
 				1C2D4BF5277EB60F00D64451 /* String+Misc.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1CB4227A279CCF1100D957A2 /* Insect */ = {
+			isa = PBXGroup;
+			children = (
+				1C2D4BE7277E0A6400D64451 /* InsectDetailsView.swift */,
+				1C2D4BE5277E0A5900D64451 /* InsectGridCell.swift */,
+				1C2D4BE1277E087300D64451 /* InsectListView.swift */,
+				1C3A3CDF279DC4C500C4C9D8 /* InsectListViewModel.swift */,
+				1C923C2F27933CAF00BAB802 /* InsectRow.swift */,
+			);
+			path = Insect;
+			sourceTree = "<group>";
+		};
+		1CB4227B279CCF2100D957A2 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				1CC9F4CD274BED9300AB1E68 /* ArtCell.swift */,
+				1CD363D62751468E005C4AC6 /* ArtDetailsView.swift */,
+				1CC9F4CB274BE71A00AB1E68 /* ArtListView.swift */,
+			);
+			path = Art;
+			sourceTree = "<group>";
+		};
+		1CB4227C279CCF3300D957A2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1C923C312794783900BAB802 /* ActiveHours.swift */,
+				1C2D4BE9277E24CE00D64451 /* MonthAvailability.swift */,
+				1C923C2B2791EBF300BAB802 /* SearchText.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		1CFC440A2749409700A5B232 = {
@@ -145,18 +179,11 @@
 			isa = PBXGroup;
 			children = (
 				1CFC44162749409700A5B232 /* ACNH_TrackerApp.swift */,
-				1C923C312794783900BAB802 /* ActiveHours.swift */,
-				1CC9F4CD274BED9300AB1E68 /* ArtCell.swift */,
-				1CD363D62751468E005C4AC6 /* ArtDetail.swift */,
-				1CC9F4CB274BE71A00AB1E68 /* ArtList.swift */,
+				1CB4227B279CCF2100D957A2 /* Art */,
+				1CB4227C279CCF3300D957A2 /* Components */,
 				1CFC44182749409700A5B232 /* ContentView.swift */,
-				1C2D4BE7277E0A6400D64451 /* InsectDetail.swift */,
-				1C2D4BE5277E0A5900D64451 /* InsectGridCell.swift */,
-				1C2D4BE1277E087300D64451 /* InsectList.swift */,
-				1C923C2F27933CAF00BAB802 /* InsectRow.swift */,
+				1CB4227A279CCF1100D957A2 /* Insect */,
 				1C2D4BDD277A630D00D64451 /* MainView.swift */,
-				1C2D4BE9277E24CE00D64451 /* MonthAvailability.swift */,
-				1C923C2B2791EBF300BAB802 /* SearchText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,15 +283,16 @@
 				1CFC44232749409900A5B232 /* ACNH_Tracker.xcdatamodeld in Sources */,
 				1C47638F27669410002389F2 /* Constants.swift in Sources */,
 				1C923C322794783900BAB802 /* ActiveHours.swift in Sources */,
-				1CD363D72751468F005C4AC6 /* ArtDetail.swift in Sources */,
+				1CD363D72751468F005C4AC6 /* ArtDetailsView.swift in Sources */,
 				1C2D4BDE277A630D00D64451 /* MainView.swift in Sources */,
 				1CFC44172749409700A5B232 /* ACNH_TrackerApp.swift in Sources */,
 				1C2D4BEF277E49FA00D64451 /* View+GlowBorder.swift in Sources */,
-				1C2D4BE8277E0A6400D64451 /* InsectDetail.swift in Sources */,
+				1C2D4BE8277E0A6400D64451 /* InsectDetailsView.swift in Sources */,
+				1C3A3CE0279DC4C500C4C9D8 /* InsectListViewModel.swift in Sources */,
 				1CFC442B27494C8C00A5B232 /* Art.swift in Sources */,
 				1C2D4BE4277E08C200D64451 /* Insect.swift in Sources */,
-				1C2D4BE2277E087300D64451 /* InsectList.swift in Sources */,
-				1CC9F4CC274BE71A00AB1E68 /* ArtList.swift in Sources */,
+				1C2D4BE2277E087300D64451 /* InsectListView.swift in Sources */,
+				1CC9F4CC274BE71A00AB1E68 /* ArtListView.swift in Sources */,
 				1C923C2C2791EBF300BAB802 /* SearchText.swift in Sources */,
 				1C2D4BF6277EB60F00D64451 /* String+Misc.swift in Sources */,
 			);

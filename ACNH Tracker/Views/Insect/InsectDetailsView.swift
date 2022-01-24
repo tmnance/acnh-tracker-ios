@@ -1,5 +1,5 @@
 //
-//  InsectDetail.swift
+//  InsectDetailsView.swift
 //  ACNH Tracker
 //
 //  Created by Tim Nance on 12/30/21.
@@ -8,7 +8,7 @@
 import SwiftUI
 import PDFKit
 
-struct InsectDetail: View {
+struct InsectDetailsView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var insect: Insect
 
@@ -149,6 +149,6 @@ struct InsectDetail: View {
 
 struct InsectDetail_Previews: PreviewProvider {
     static var previews: some View {
-        InsectDetail(insect: Insect.sample)
+        InsectDetailsView(insect: Insect.sample)
     }
 }
